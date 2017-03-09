@@ -198,52 +198,6 @@ int main()
 	p0->row = 0;
 	p0->col = 0;
 
-	// parameters *p1 = (parameters *) malloc(sizeof(parameters));
-	// p1->row = 0;
-	// p1->col = 0;
-
-	// parameters *p2 = (parameters *) malloc(sizeof(parameters));
-	// p2->row = 0;
-	// p2->col = 3;	
-
-	// parameters *p3 = (parameters *) malloc(sizeof(parameters));
-	// p3->row = 0;
-	// p3->col = 6;
-
-	// parameters *p4 = (parameters *) malloc(sizeof(parameters));
-	// p4->row = 3;
-	// p4->col = 0;
-
-	// parameters *p5 = (parameters *) malloc(sizeof(parameters));
-	// p5->row = 3;
-	// p5->col = 3;
-
-	// parameters *p6 = (parameters *) malloc(sizeof(parameters));
-	// p6->row = 3;
-	// p6->col = 6;
-
-	// parameters *p7 = (parameters *) malloc(sizeof(parameters));
-	// p7->row = 6;
-	// p7->col = 0;
-
-	// parameters *p8 = (parameters *) malloc(sizeof(parameters));
-	// p8->row = 6;
-	// p8->col = 3;
-
-	// parameters *p9 = (parameters *) malloc(sizeof(parameters));
-	// p9->row = 6;
-	// p9->col = 6;
-
-	// create the threads
-	// pthread_create(&t1, NULL, checksquare, p1);
-	// pthread_create(&t2, NULL, checksquare, p2);
-	// pthread_create(&t3, NULL, checksquare, p3);
-	// pthread_create(&t4, NULL, checksquare, p4);
-	// pthread_create(&t5, NULL, checksquare, p5);
-	// pthread_create(&t6, NULL, checksquare, p6);
-	// pthread_create(&t7, NULL, checksquare, p7);
-	// pthread_create(&t8, NULL, checksquare, p8);
-	// pthread_create(&t9, NULL, checksquare, p9);
 	pthread_create(&tc, NULL, checkCol, p0);
 	pthread_create(&tr, NULL, checkRow, p0);
 
@@ -252,28 +206,11 @@ int main()
 		pthread_join(threads[i], NULL);
 		free(params[i]);
 	}
-	// pthread_join(t1, NULL);
-	// pthread_join(t2, NULL);
-	// pthread_join(t3, NULL);
-	// pthread_join(t4, NULL);
-	// pthread_join(t5, NULL);
-	// pthread_join(t6, NULL);
-	// pthread_join(t7, NULL);
-	// pthread_join(t8, NULL);
-	// pthread_join(t9, NULL);
+
 	pthread_join(tc, NULL);
 	pthread_join(tr, NULL);
 
 	free(p0);
-	// free(p1);
-	// free(p2);
-	// free(p3);
-	// free(p4);
-	// free(p5);
-	// free(p6);
-	// free(p7);
-	// free(p8);
-	// free(p9);
 
 	for (int i=0; i < 11; i++)
 	{
